@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tense: MyString
+  transliteration: MyString
+  translation: MyString
+  pronunciation: MyString
+  sentence_example_one: MyText
+  sentence_example_one_pronunciation: MyString
+  image: MyString
+
+two:
+  tense: MyString
+  transliteration: MyString
+  translation: MyString
+  pronunciation: MyString
+  sentence_example_one: MyText
+  sentence_example_one_pronunciation: MyString
+  image: MyString
