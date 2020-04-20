@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  english_sentence: MyText
+  transliteration_sentence: MyText
+  translation_sentence: MyText
+  pronunciation_sentence: MyString
+
+two:
+  english_sentence: MyText
+  transliteration_sentence: MyText
+  translation_sentence: MyText
+  pronunciation_sentence: MyString
