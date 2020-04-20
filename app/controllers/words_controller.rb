@@ -57,8 +57,7 @@ class WordsController < ApplicationController
                                  :transliteration,
                                  :translation,
                                  :pronunciation,
-                                 :sentence_example_one,
-                                 :sentence_example_one_pronunciation,
+                                 :sentence_example_one,                                 
                                  :image)
   end
 end
