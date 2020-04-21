@@ -1,7 +1,6 @@
 class WordsController < ApplicationController
   def new
-    @word = Word.new({:english_word => 'test'})
-    @word_count = Word.count + 1
+    @word = Word.new()
   end
 
   def create
