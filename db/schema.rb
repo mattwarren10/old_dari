@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_220725) do
+ActiveRecord::Schema.define(version: 2020_04_21_172857) do
 
   create_table "sentences", force: :cascade do |t|
     t.text "english_sentence"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2020_04_20_220725) do
     t.string "pronunciation_sentence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "word_id"
+    t.index ["word_id"], name: "index_sentences_on_word_id"
+  end
+
+  create_table "sentences_words", id: false, force: :cascade do |t|
+    t.integer "word_id", null: false
+    t.integer "sentence_id", null: false
   end
 
   create_table "words", force: :cascade do |t|
@@ -32,4 +39,5 @@ ActiveRecord::Schema.define(version: 2020_04_20_220725) do
     t.string "english_word"
   end
 
+  add_foreign_key "sentences", "words"
 end

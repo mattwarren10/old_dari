@@ -40,7 +40,7 @@ class WordsController < ApplicationController
   end
 
   def index
-    @words = Word.sorted
+    @words = Word.all
   end
 
   def show

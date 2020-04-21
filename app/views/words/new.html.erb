@@ -1,2 +1,16 @@
-<h1>Words#new</h1>
-<p>Find me in app/views/words/new.html.erb</p>
+<%= @word_title = "Add Word" %>
+
+<div class="words new">
+	<h2>Add Word</h2>
+
+	<%= form_for(@word, :url => words_index_path, :method => 'post') do |f| %>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div class="form-buttons">
+      <%= f.submit("Add Word") %>
+    </div>
+
+  <% end %>
+	
+</div>
