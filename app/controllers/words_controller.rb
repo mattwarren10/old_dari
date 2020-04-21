@@ -52,7 +52,7 @@ class WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit(:english_word,
-                                 :tense, 
+                                 :part_of_speech, 
                                  :transliteration,
                                  :translation,
                                  :pronunciation,

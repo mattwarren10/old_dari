@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_172857) do
+ActiveRecord::Schema.define(version: 2020_04_21_215016) do
 
   create_table "sentences", force: :cascade do |t|
     t.text "english_sentence"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_172857) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string "tense"
+    t.string "part_of_speech"
     t.string "transliteration"
     t.string "translation"
     t.string "pronunciation"

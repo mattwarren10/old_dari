@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'sentences/new'
+  get 'sentences/create'
+  get 'sentences/update'
+  get 'sentences/edit'
+  get 'sentences/delete'
+  get 'sentences/destroy'
+  get 'sentences/index'
+  get 'sentences/show'
   get 'words/new'
   get 'words/create'
   get 'words/update'

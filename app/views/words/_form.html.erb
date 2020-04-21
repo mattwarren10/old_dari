@@ -20,4 +20,11 @@
     <th><%= f.label(:pronunciation) %></th>
     <td><%= f.text_field(:pronunciation) %></td>
   </tr>
+  <tr>
+    <th><%= fields_for :sentences, @word.sentences do |sentences_form| %>
+    			<%= sentences_form.text_field :english_sentence %>
+    		<% end %>
+    </th>
+  </tr>
+
 </table>
