@@ -5,6 +5,18 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
+    @word.pronunciation.attach(
+      io: File.open('/app/assets/audio'),
+      filename: "#{@word.english_word}.jpg",
+      content_type: 'audio/x-m4a',
+      identify: false
+    )
+    @word.image.attach(
+      io: File.open('/app/assets/images'),
+      filename: "#{@word.english_word}.jpg",
+      content_type: 'image/jpeg',
+      identify: false
+    )
     if @word.save
       flash[:notice] = "Word created successfully."
       redirect_to(word_path(@word))
@@ -25,16 +37,16 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word_count = Word.count
+    @word = find_words
   end
 
   def delete
-    @word = Word.find(params[:id])
+    @word = find_words
   end
 
   def destroy
     @word.destroy
-    flash[:notice] = "Word '#{@word.name}' destroyed successfully."
+    flash[:notice] = "Word '#{@word.english_word}' destroyed successfully."
     redirect_to(words_path)
   end
 
@@ -43,6 +55,7 @@ class WordsController < ApplicationController
   end
 
   def show
+    @word = find_words
   end
 
   private
@@ -55,8 +68,7 @@ class WordsController < ApplicationController
                                  :part_of_speech, 
                                  :transliteration,
                                  :translation,
-                                 :pronunciation,
-                                 :sentence_example_one,                                 
+                                 :pronunciation,                              
                                  :image)
   end
 end
