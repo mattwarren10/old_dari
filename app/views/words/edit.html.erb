@@ -1,7 +1,7 @@
 <%= link_to("<< Back to List", words_path, :class => 'back-link') %>
 
-<div class="subjects edit">
-  <h2>Update Subject</h2>
+<div class="words edit">
+  <h2>Update Word</h2>
 
   <%= form_for(@word) do |f| %>
 	<%= render :partial => 'form', :locals => { :f => f } %>

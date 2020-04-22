@@ -1,15 +1,19 @@
 <h1>Words</h1>
 
+<h3><%= link_to("Add Word", new_word_path) %></h3>
+
+
 <table class="list" summary="Word List">
+	<tr>
+		<th>English Word</th>
+		<th>Part of Speech</th>
+		<th>Transliteration</th>
+		<th>Translation</th>
+		<th>Pronunciation</th>
+		<th>Image</th>
+		<th>Modify</th>
+	</tr>
 	<% @words.each do |word| %>
-		<tr>
-			<th>English Word</th>
-			<th>Part of Speech</th>
-			<th>Transliteration</th>
-			<th>Translation</th>
-			<th>Pronunciation</th>
-			<th>Image</th>
-		</tr>
 		<tr>
 			<td><%= word.english_word %></td>
 			<td><%= word.part_of_speech %></td>
@@ -22,7 +26,8 @@
 					</figcaption>
 					
 				</figure>
-			<td><%= image_tag word.image.variant(resize_to_limit: [100, 100]) %></td>
+			<td><%= image_tag("/app/assets/images/'#{word.english_word}'.jpg") %></td>
+
 		</tr>
 	<% end %>
 </table>
