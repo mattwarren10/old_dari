@@ -25,11 +25,11 @@ class SentencesController < ApplicationController
   end
 
   def edit
-    @sentence_count = Sentence.count
+    @sentence_count = find_sentences
   end
 
   def delete
-    @sentence = Sentence.find(params[:id])
+    @sentence = find_sentences
   end
 
   def destroy
@@ -45,7 +45,7 @@ class SentencesController < ApplicationController
   end
 
   private
-  def find_senteneces
+  def find_sentences
     @sentence = Sentence.find(params[:id])
   end
 
