@@ -1,6 +1,5 @@
 class Word < ApplicationRecord
 
-
 	#relations
 	has_many :sentences
 
@@ -10,8 +9,8 @@ class Word < ApplicationRecord
 
 	#validations
 	validates_presence_of :english_word,
-												:tense,
+												:part_of_speech,
 												:transliteration,
-												:translation
+												:translation											
 
 end

@@ -5,23 +5,10 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    @word.pronunciation.attach(
-      io: File.open('/app/assets/audio'),
-      filename: "#{@word.english_word}.jpg",
-      content_type: 'audio/x-m4a',
-      identify: false
-    )
-    @word.image.attach(
-      io: File.open('/app/assets/images'),
-      filename: "#{@word.english_word}.jpg",
-      content_type: 'image/jpeg',
-      identify: false
-    )
     if @word.save
       flash[:notice] = "Word created successfully."
-      redirect_to(word_path(@word))
+      redirect_to @word
     else
-      @word_count = Word.count + 1
       render :new
     end
   end
@@ -64,11 +51,12 @@ class WordsController < ApplicationController
   end
 
   def word_params
-    params.require(:word).permit(:english_word,
-                                 :part_of_speech, 
+    params.require(:word).permit(:part_of_speech, 
                                  :transliteration,
                                  :translation,
                                  :pronunciation,                              
-                                 :image)
+                                 :image,
+                                 :english_word
+                                )
   end
 end
