@@ -23,8 +23,8 @@
 				<figure>
 					<figcaption>
 						Listen to <%= word.translation %>
+						<%= audio_tag("#{word.english_word}.m4a", controls: true) %>
 					</figcaption>
-					
 				</figure>
 			<td><%= image_tag("/app/assets/images/'#{word.english_word}'.jpg") %></td>
 			<td><%= link_to("Edit", edit_word_path(word), :class => 'back-link') %></td>
