@@ -12,7 +12,7 @@
 					<figcaption>
 						Listen to <%= word.translation %>
 					</figcaption>
-					<audio controls src="<%= asset_path(/assets/audio/word.english_word) %>"></audio></td>
+					<audio controls src="<%= asset_path('#{english_word}.jpg') %>"></audio></td>
 				</figure>
 			<td><%= image_tag word.image.variant(resize_to_limit: [100, 100]) %></td>
 		</tr>
