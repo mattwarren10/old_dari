@@ -3,7 +3,7 @@
 <div class="words edit">
   <h2>Update Word</h2>
 
-  <%= form_for(@word) do |f| %>
+  <%= form_for(@word, :url => words_update_path(@word.id), :method => 'patch') do |f| %>
 	<%= render :partial => 'form', :locals => { :f => f } %>
 
     <div class="form-buttons">
