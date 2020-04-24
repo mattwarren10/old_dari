@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  helper FormatWordToSnakeCase
   def new
     @word = Word.new()
   end
