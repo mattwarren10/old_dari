@@ -1,7 +1,10 @@
 <%= link_to("<< Back to List", words_path, :class => 'back-link') %>
-<h1><%= @word.english_word %></h1>
+<h1><%= @word.english_word.capitalize! %></h1>
 
 <div>
-	
-
+			<%= @word.id %>
+			<%= @word.english_word %>
+			<%= @word.part_of_speech %>
+			<%= @word.transliteration %>
+			<%= @word.translation %>
 </div>
