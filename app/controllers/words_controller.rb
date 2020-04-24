@@ -14,13 +14,10 @@ class WordsController < ApplicationController
   end
 
   def update
-    if @word.update_attributes(word_params)
-      flash[:notice] = "Word updated successfully."
-      redirect_to(word_path(@word))
-    else
-      @word_count = Word.count
-      render :edit
-    end
+    @word = find_words
+    @word.update_attributes(word_params)
+    flash[:notice] = "Word updated successfully."
+    redirect_to(word_path(@word))
   end
 
   def edit
@@ -47,7 +44,7 @@ class WordsController < ApplicationController
 
   private
   def find_words
-    @word = Word.find(params[:id])
+    Word.find(params[:id])
   end
 
   def word_params

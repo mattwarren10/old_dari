@@ -1,10 +1,11 @@
-<h1>Words</h1>
+<h1>Dari Words</h1>
 
 <h3><%= link_to("Add Word", new_word_path) %></h3>
 
 
 <table class="list" summary="Word List">
 	<tr>
+		<th>ID</th>
 		<th>English Word</th>
 		<th>Part of Speech</th>
 		<th>Transliteration</th>
@@ -15,7 +16,8 @@
 	</tr>
 	<% @words.each do |word| %>
 		<tr>
-			<td><%= word.english_word %></td>
+			<td><%= word.id %></td>
+			<td><%= link_to(word.english_word, word_path(word.id)) %></td>
 			<td><%= word.part_of_speech %></td>
 			<td><%= word.transliteration %></td>
 			<td><%= word.translation %></td>
@@ -23,7 +25,7 @@
 				<figure>
 					<figcaption>
 						Listen to <%= word.translation %>
-						<%= audio_tag("#{word.english_word}.m4a", controls: true) %>
+						
 					</figcaption>
 				</figure>
 			<td><%= image_tag("/app/assets/images/'#{word.english_word}'.jpg") %></td>
