@@ -21,10 +21,9 @@
 			<td><%= word.part_of_speech %></td>
 			<td><%= word.transliteration %></td>
 			<td><%= word.translation %></td>
-			<td><%= audio_tag "#{word.english_word}.m4a",controls: true %></td>
+			<td><%= audio_tag "#{word.english_word}.m4a", controls: true %></td>
 			<td><%= image_tag	"#{word.english_word}.jpg" %></td>
 			<td><%= link_to("Edit", edit_word_path(word), :class => 'back-link') %></td>
-
 		</tr>
 	<% end %>
 </table>

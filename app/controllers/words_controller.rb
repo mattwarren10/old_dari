@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  helper FormatWordToSnakeCase
+
   def new
     @word = Word.new()
   end
@@ -30,6 +30,7 @@ class WordsController < ApplicationController
   end
 
   def destroy
+    @word = find_words
     @word.destroy
     flash[:notice] = "Word '#{@word.english_word}' destroyed successfully."
     redirect_to(words_path)
