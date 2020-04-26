@@ -1,0 +1,15 @@
+<div class="subjects delete">
+  <h2>Delete Word</h2>
+
+  <%= form_for(@word, :url => words_destroy_path(@word.id), :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to permanently delete this word?</p>
+
+    <p class="reference-name"><%= f.object.english_word %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Word") %>
+   </div>
+
+  <% end %>
+</div>
