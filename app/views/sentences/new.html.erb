@@ -1,2 +1,17 @@
 <h1>Sentences#new</h1>
 <p>Find me in app/views/sentences/new.html.erb</p>
+
+<div class="sentences new">
+	<h2>Add Sentence to <%= @word %></h2>
+
+	<%= form_for(@sentence, :url => word_sentences_path(:word_id => @word.id), :method => 'post') do |f| %>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div class="form-buttons">
+      <%= f.submit("Add Sentence") %>
+    </div>
+
+  <% end %>
+	
+</div>

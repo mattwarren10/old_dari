@@ -1,15 +1,15 @@
 class SentencesController < ApplicationController
   def new
-    @sentence = Sentence.new()
+    @sentence = Sentence.new(:word_id => @word.id)
   end
 
   def create
     @sentence = Sentence.new(sentence_params)
+    @sentence.word = @word
     if @sentence.save
       flash[:notice] = "Sentence created successfully."
-      redirect_to(word_path(@word))
+      redirect_to(word_sentences_path(@sentence.word_id))
     else
-      @sentence_count = Sentence.count + 1
       render new
     end
   end
@@ -34,7 +34,7 @@ class SentencesController < ApplicationController
 
   def destroy
     @sentence.destroy
-    flash[:notice] "Sentence '#{@sentence.english_sentence}' destroyed successfully."
+    flash[:notice] = "Sentence '#{@sentence.english_sentence}' destroyed successfully."
   end
 
   def index
