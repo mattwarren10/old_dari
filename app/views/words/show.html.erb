@@ -3,24 +3,27 @@
 
 <table>
 	<tr>
-		<th>ID</th>
-		<th>English Word</th>
-		<th>Part of Speech</th>
-		<th>Transliteration</th>
-		<th>Translation</th>
-		<th>Pronunciation</th>
-		<th>Image</th>
-		<th>Modify</th>
+		<th>ID</th><td><%= @word.id %></td>
+	<tr>
+		<th>English Word</th><td><%= @word.english_word %></td>
 	</tr>
 	<tr>
-		<td><%= @word.id %></td>
-		<td><%= @word.english_word %></td>
-		<td><%= @word.part_of_speech %></td>
-		<td><%= @word.transliteration %></td>
-		<td><%= @word.translation %></td>
-		<td><%= audio_tag "#{@word.english_word}.m4a", controls: true %></td>
-		<td><%= image_tag	"#{@word.english_word}.jpg" %></td>
-		<td><%= link_to("Edit", edit_word_path(@word)) %></td>
+		<th>Part of Speech</th><td><%= @word.part_of_speech %></td>
+	</tr>
+	<tr>
+		<th>Transliteration</th><td><%= @word.transliteration %></td>
+	</tr>
+	<tr>
+		<th>Translation</th><td><%= @word.translation %></td>
+	</tr>
+	<tr>
+		<th>Pronunciation</th><td><%= audio_tag "#{@word.english_word}.m4a", controls: true %></td>
+	</tr>
+	<tr>
+		<th>Image</th><td><%= image_tag	"#{@word.english_word}.jpg" %></td>
+	</tr>
+	<tr>
+		<th>Modify</th><td><%= link_to("Edit", edit_word_path(@word)) %></td>
 	</tr>
 </table>
 
