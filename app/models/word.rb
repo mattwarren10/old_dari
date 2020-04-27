@@ -1,7 +1,7 @@
 class Word < ApplicationRecord
 
 	#relations
-	has_many :sentences
+	has_many :sentences, dependent: :destroy
 
 	#attaching files
 	has_one_attached :image
