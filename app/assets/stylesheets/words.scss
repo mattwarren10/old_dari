@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 body,
 html {
 	font-family: arial;
 }
 
+///////////////GENERAL TABLE///////////////
 tr {
   background: #f4f7f8;
   border-bottom: 1px solid #FFF;
@@ -32,4 +34,27 @@ tfoot td {
   font-size: 0.8em;
   font-style: italic;
   color: #8a97a0;
+}
+
+///////////////WORD#SHOW///////////////
+.back-link {
+}
+
+.word-header {
+}
+
+.word-header h1 {
+  display: inline-block
+}
+
+.word-header .square-image {
+  display: inline-block;
+}
+
+.word-table {
+
+}
+
+.word-sentences-table {
+  
 }

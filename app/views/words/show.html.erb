@@ -1,7 +1,10 @@
 <%= link_to("<< Back to List", words_path, :class => 'back-link') %>
-<h1><%= @word.english_word %></h1>
+<div class="word-header">
+	<%= image_tag	"#{@word.english_word}.jpg", :class => 'square-image' %>
+	<h1><%= @word.english_word %></h1>
+</div>
 
-<table summary="word">
+<table summary="word" class="word-table">
 	<tr>
 		<th>ID</th><td><%= @word.id %></td>
 	<tr>
@@ -20,35 +23,28 @@
 		<th>Pronunciation</th><td><%= audio_tag "#{@word.english_word}.m4a", controls: true %></td>
 	</tr>
 	<tr>
-		<th>Image</th><td><%= image_tag	"#{@word.english_word}.jpg" %></td>
-	</tr>
-	<tr>
 		<th>Modify</th><td><%= link_to("Edit", edit_word_path(@word)) %></td>
 	</tr>
 </table>
 
 <%= @word.sentences.each do |sentence| %>
-
-<table summary="words sentences">
-	<tr>
-		<th>Word ID</th><td><%= sentence.word_id %></td>
-	<tr>
-		<th>English Sentence</th><td><%= sentence.english_sentence %></td>
-	</tr>
-	<tr>
-		<th>Transliteration Sentence</th><td><%= sentence.transliteration_sentence %></td>
-	</tr>
-	<tr>
-		<th>Translation Sentence</th><td><%= sentence.translation_sentence %></td>
-	</tr>
-	<tr>
-		<th>Pronunciation Sentence</th><td><%= sentence.pronunciation_sentence %></td>
-	</tr>
-	<tr>
-		<th>Pronunciation</th><td></td>
-	</tr>
-	<tr>
-		<th>Modify</th><td><%= link_to("Edit", edit_word_sentence_path(sentence)) %></td>
-	</tr>
-</table>
+	<table summary="word sentences" class="word-sentences-table">
+		<tr>
+			<th>Word ID</th><td><%= sentence.word_id %></td>
+		<tr>
+			<th>English Sentence</th><td><%= sentence.english_sentence %></td>
+		</tr>
+		<tr>
+			<th>Transliteration Sentence</th><td><%= sentence.transliteration_sentence %></td>
+		</tr>
+		<tr>
+			<th>Translation Sentence</th><td><%= sentence.translation_sentence %></td>
+		</tr>
+		<tr>
+			<th>Pronunciation Sentence</th><td><%= sentence.pronunciation_sentence %></td>
+		</tr>
+		<tr>
+			<th>Modify</th><td><%= link_to("Edit", edit_word_sentence_path(sentence)) %></td>
+		</tr>
+	</table>
 <% end %>	
