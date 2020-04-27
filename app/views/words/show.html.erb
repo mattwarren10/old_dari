@@ -26,11 +26,12 @@
 		<th>Modify</th><td><%= link_to("Edit", edit_word_path(@word)) %></td>
 	</tr>
 </table>
-
-<%= @word.sentences.each do |sentence| %>
+<br />
+<br />
+<% @word.sentences.each do |sentence| %>
 	<table summary="word sentences" class="word-sentences-table">
 		<tr>
-			<th>Word ID</th><td><%= sentence.word_id %></td>
+			<th>Sentence ID</th><td><%= sentence.id %></td>
 		<tr>
 			<th>English Sentence</th><td><%= sentence.english_sentence %></td>
 		</tr>
